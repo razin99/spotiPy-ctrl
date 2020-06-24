@@ -46,12 +46,11 @@ def vol_down():
 
 # def next_track():
 
-#Play pause key
-VOL_D   = {keyboard.Key.cmd, keyboard.Key.f7}
-VOL_U   = {keyboard.Key.cmd, keyboard.Key.f8}
-PREV    = {keyboard.Key.cmd, keyboard.Key.f9}
-PLAY    = {keyboard.Key.cmd, keyboard.Key.f10}
-NEXT    = {keyboard.Key.cmd, keyboard.Key.f11}
+VOL_U = {keyboard.Key.cmd, keyboard.Key.f8}
+VOL_D = {keyboard.Key.cmd, keyboard.Key.f7}
+PREV = {keyboard.Key.cmd, keyboard.Key.f9}
+PLAY = {keyboard.Key.cmd, keyboard.Key.f10}
+NEXT = {keyboard.Key.cmd, keyboard.Key.f11}
 
 # Active set
 current = set()
@@ -60,13 +59,24 @@ def on_press(key):
     if key in VOL_D or VOL_U or PREV or PLAY or NEXT:
         current.add(key)
         if all(k in current for k in VOL_D):
-            vol_down()
+            try:
+                vol_down()
+            except:
+                print("Vol down action failed")
+                exit (0)
         elif all(k in current for k in VOL_U):
-            vol_up()
+            try:
+                vol_up()
+            except:
+                print("Vol up action failed")
+                exit (0)
         elif all(k in current for k in PREV):
             print("Prev")
         elif all(k in current for k in PLAY):
-            print("Play")
+            try:
+                sp.start_playback(device_id=get_device(device_name)["id"])
+            except:
+                print("Play pause failed")
         elif all(k in current for k in NEXT):
             print("Next")
 
