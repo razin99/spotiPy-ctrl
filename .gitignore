@@ -7,7 +7,11 @@ __pycache__/
 *.so
 
 # VScode settings
-.vscode/settings.json
+.vscode/
+Include/
+pyvenv.cfg
+lib64
+lib64/
 
 #spotify keys
 creds.py
