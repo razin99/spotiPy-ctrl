@@ -1,0 +1,6 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "~/spotiPy-ctrl/bin/python3",
+    "python.linting.pylintPath": "~/spotiPy-ctrl/bin/pylint"
+}
