@@ -12,7 +12,6 @@ mccabe==0.6.1
 pylint==2.5.3
 requests==2.24.0
 six==1.15.0
-spotify-local-control==0.2.3
 toml==0.10.1
 urllib3==1.25.9
 wrapt==1.12.1
